@@ -51,7 +51,6 @@ spec:
             - name: task-step
               image: registry.access.redhat.com/ubi9/ubi-micro
               script: |
-                echo "$(params.repo_url)"
                 echo "$(params.pull_request_number)"
                 exit 0
       - name: fetch-repository
