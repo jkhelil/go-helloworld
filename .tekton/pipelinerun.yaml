@@ -44,6 +44,15 @@ spec:
       - name: source
       - name: basic-auth
     tasks:
+      - name: task
+        displayName: This is a task
+        taskSpec:
+          steps:
+            - name: task-step
+              image: registry.access.redhat.com/ubi9/ubi-micro
+              script: |
+                echo "$(params.pull_request_number)"
+                exit 0
       - name: fetch-repository
         taskRef:
           name: git-clone
