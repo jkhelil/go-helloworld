@@ -70,8 +70,8 @@ spec:
             workspace: source
       - name: code-review
         taskRef:
-          - resolver: cluster
-            params:
+          resolver: cluster
+          params:
             - name: kind
               value: task
             - name: name
