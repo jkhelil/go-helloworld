@@ -66,7 +66,34 @@ spec:
         workspaces:
           - name: source
             workspace: source
-
+      - name: code-review
+        taskRef:
+          name: ai-code-review
+        runAfter:
+          - golangci-lint
+        params:
+          - name: repo
+            value: "jkhelil/go-helloworld"
+          - name: pullRequestNumber
+            value: "19"
+          - name: githubHost
+            value: "https://api.github.com"
+          - name: apiBaseUrl
+            value: "https://granite-3-1-8b-instruct--apicast-staging.apps.int.stc.ai.prod.us-east-1.aws.paas.redhat.com:443/v1"
+          - name: apiModel
+            value: "/data/granite-3.1-8b-instruct"
+          - name: excludePatterns
+            value: "*.md,*.txt,package-lock.json,yarn.lock,*.png,*.jpg"
+          - name: dryRun
+            value: "false"
+          - name: debug
+            value: "true"
+        workspaces:
+          - name: source
+            workspace: source
+          - name: script-workspace
+            configMap:
+              name: ai-review-script
   workspaces:
     - name: source
       volumeClaimTemplate:
