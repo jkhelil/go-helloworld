@@ -34,8 +34,8 @@ spec:
       value: "{{ repo_url }}"
     - name: revision
       value: "{{ revision }}"
-    - name: pullRequestNumber
-      value: "{{ pullRequestNumber }}"
+    - name: pull_request_number
+      value: "{{ pull_request_number }}"
   pipelineSpec:
     params:
       - name: repo_url
@@ -73,7 +73,7 @@ spec:
           - name: repo
             value: "jkhelil/go-helloworld"
           - name: pullRequestNumber
-            value: $(params.pullRequestNumber)
+            value: $(params.pull_request_number)
           - name: githubHost
             value: "https://api.github.com"
           - name: apiBaseUrl
