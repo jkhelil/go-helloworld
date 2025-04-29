@@ -57,17 +57,6 @@ spec:
             value: $(params.repo_url)
           - name: revision
             value: $(params.revision)
-      - name: golangci-lint
-        taskRef:
-          name: golangci-lint
-        runAfter:
-          - fetch-repository
-        params:
-          - name: package
-            value: .
-        workspaces:
-          - name: source
-            workspace: source
       - name: code-review
         taskRef:
           resolver: cluster
@@ -79,7 +68,7 @@ spec:
             - name: namespace
               value: default
         runAfter:
-          - golangci-lint
+          - fetch-repository
         params:
           - name: repo
             value: "jkhelil/go-helloworld"
