@@ -68,7 +68,14 @@ spec:
             workspace: source
       - name: code-review
         taskRef:
-          name: ai-code-review
+          - resolver: cluster
+            params:
+            - name: kind
+              value: task
+            - name: name
+              value: ai-code-review
+            - name: namespace
+              value: default
         runAfter:
           - golangci-lint
         params:
