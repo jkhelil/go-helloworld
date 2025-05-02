@@ -9,4 +9,5 @@ func main() {
 	// fmt.Prinln("hello world")
 
 	fmt.Println("echo hello world")
+	fmt.Println("new commit")
 }
