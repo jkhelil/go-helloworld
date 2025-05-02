@@ -5,8 +5,23 @@ import (
 )
 
 func main() {
-	// this is no purpose comment and should trigger a review comment
-	// fmt.Prinln("hello world")
+	// this comment doesnt add any value and should trigger a review comment instead..
+
+	x := 42
+	if x == 42 {
+		fmt.Println("The answer is correct.")
+	}
+
+	// Inefficient string concatenation in a loop
+	result := ""
+	for i := 0; i < 5; i++ {
+		result = result + fmt.Sprintf("Item %d, ", i)
+	}
+	fmt.Println(result)
 
 	fmt.Println("echo hello world")
+
+	// this comment doesnt add any value and should trigger a review comment instead..
+
+	// this comment doesnt add any value and should trigger a review comment instead..
 }
