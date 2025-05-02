@@ -90,8 +90,6 @@ spec:
         workspaces:
           - name: shared-workspace
             workspace: source
-          - name: script-workspace
-            workspace: script-workspace
   workspaces:
     - name: source
       volumeClaimTemplate:
@@ -106,6 +104,4 @@ spec:
     - name: basic-auth
       secret:
         secretName: "{{ git_auth_secret }}"
-    - name: script-workspace
-      configMap:
-        name: ai-review-script
+
