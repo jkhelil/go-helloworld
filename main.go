@@ -10,3 +10,5 @@ func main() {
 
 	fmt.Println("echo hello world")
 }
+
+//new useless comment
